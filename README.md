@@ -4,7 +4,8 @@ ArtfulNarration is a social reading platform where writers can share their stori
 
 The ArtfulNarration API allows writers to post their stories to ArtfulNarration and read others stories.
 
+### Frameworks and Libraries: ###
+
+Express, Mongoose (MongoDB), JSONWebToken, bcrypt, bodyparser, morgan
 
 Created using Node v0.12.7
-
-Frameworks and libraries used so far: Express, Mongoose (MongoDB), JSONWebToken, bcrypt, bodyparser, morgan
