@@ -18,7 +18,6 @@ SchemaUsers.pre('save', function (next) {
 		if (err) {
 			return next(err)
 		}
-
 		user.password = hash;
 		console.log(user.password);
 		next();
@@ -28,7 +27,6 @@ SchemaUsers.pre('save', function (next) {
 SchemaUsers.methods.comparePasswords = function (password) {
 	var user = this;
 	return bcrypt.compareSync(password, user.password)
-
 };
 
 module.exports = mongoose.model('User', SchemaUsers);

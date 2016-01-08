@@ -126,6 +126,10 @@ api.route('/story')
     })
 ;
 
+//For frontend
+    api.get('/current', function(req,res) {
+        res.json(req.decoded);
+    });
 
 module.exports = api;
 
