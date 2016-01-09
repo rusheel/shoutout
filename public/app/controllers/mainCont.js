@@ -24,10 +24,10 @@ angular.module('mainCtrl', [])
                     vm.processing = false;
                     Auth.getUser()
                         .then(function(data) {
-                            vm.user = data.data;
+                            vm.user = data;
+                            console.log(data);
                         });
                     console.log('post do login')
-                    console.log(data);
                     if (data) {
                         //redirect to homepage
                         $location.path('/');
@@ -39,7 +39,7 @@ angular.module('mainCtrl', [])
 
         vm.doLogout= function () {
             Auth.logout();
-            //redirect user to logout page
-            $location.path('/logout');
+            //redirect user to home
+            $location.path('/index.html');
         }
     });

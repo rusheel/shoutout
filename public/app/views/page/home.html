@@ -1,9 +1,55 @@
-<div class="jumbotron text-center">
+<div class="jumbotron text-center" ng-controller="MainController as login" ng-if="!main.loggedIn">
     <div>
-        <h1> Sign up </h1>
+        <h1 style="font-family: 'Delius Unicase', cursive; font-weight:bold "> ShoutOut </h1>
     </div>
     <div>
-        <p> Login to start writing stories :) </p>
+        <img class="img-responsive" style="max-width:25%;margin: 0 auto;" src="app/views/images/shoutout.png"/>
+        <p> Get a live feed of what everyone is saying</p>
+        <p> Share news, crack jokes, ask questions, offer support, and interact freely.</p>
+        <p> Login to discover the ShoutOut world :) </p>
         <a href="/login" class="btn btn-primary"> Login </a>
     </div>
+</div>
+
+
+<div class="row" ng-if="main.loggedIn">
+    <div class="col-md-4">
+    </div>
+
+
+        <div class ="col-md-4" ng-controller="StoryController as story">
+            <div class="row">
+                <div class ="panel panel-primary">
+                    <div class="panel-heading">
+                        Shoutout
+                    </div>
+
+                    <div class = "panel-body">
+                        <form ng-submit="story.createStory()">
+                            <input class="form-control input-lg" type="text" ng-model="story.storyData.content" placeholder=".......">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        ShoutOuts
+                    </div>
+                    <div class="panel-body" ng-repeat="each in story.stories | reverse">
+                        <p style="max-width: 900px;word-wrap: break-word"> {{each.content}} </p>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+    <div class="col-md-4">
+    </div>
+
+
 </div>

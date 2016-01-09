@@ -5,12 +5,12 @@ angular.module('userService', [])
 
         userFactory.create = function(userData) {
             return $http.post('/api/signup', userData);
-        }
+        };
 
         userFactory.all = function(userData) {
-            return $http.get('/api', userData);
-        }
+            return $http.get('/api/users', userData);
+        };
 
         return userFactory;
 
-    }
+    });

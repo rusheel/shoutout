@@ -9,27 +9,29 @@ angular.module('userCtrl',['userService'])
         User.all()
             .success(function(data) {
                 vm.users = data;
-                vm.message = response.data.message;
 
             })
 
 
-    }
+    })
 
 
-.controller('UserCreateController', function(User, $location, $window)) {
+.controller('UserCreateController', function(User, $location, $window){
     var vm = this;
 
-    vm.signupUser = function () {
+    vm.signUpUser = function () {
+        console.log('signup process started');
         vm.message = '';
+        console.log(vm.userData);
         User.create(vm.userData)
             .then(function(response) {
+                console.log('response')
+                console.log(response)
                 vm.userData = {};
-                $window.localStorage.setItem('token', response.data);
+                vm.message = response.data.message;
+                $window.localStorage.setItem('token', response.data.token);
                 $location.path('/');
 
             })
     }
-
-
-}
+})

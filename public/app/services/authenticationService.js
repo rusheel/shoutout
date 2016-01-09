@@ -9,8 +9,8 @@ angular.module('authenticationService', [])
                 password: password
             })
                 .success(function (data) {
-                    console.log("token is " +data);
-                    AuthToken.setToken(data);
+                    console.log(data);
+                    AuthToken.setToken(data.token);
                     console.log('set token');
                     return data;
                 })
@@ -35,7 +35,7 @@ angular.module('authenticationService', [])
             else {
                 return $q.reject({message:"User does not have a valid token"});
             }
-        }
+        };
         return authFactory;
 
     })
@@ -54,6 +54,7 @@ angular.module('authenticationService', [])
             $window.localStorage.setItem('token', token);
         }
         else {
+            console.log('here')
             $window.localStorage.removeItem('token');
         }
 
@@ -62,12 +63,15 @@ angular.module('authenticationService', [])
 })
 
 
-.factory('Interceptor', function($q, $location, AuthToken) {
+.factory('AuthInterceptor', function($q, $location, AuthToken) {
+        console.log('interceptors')
+
         var interceptorFactory = {};
-        console.log(token);
         interceptorFactory.request = function (config) {
+            console.log('goes here')
             var token = AuthToken.getToken();
             if (token) {
+                console.log('exists')
                 config.headers['x-access-token'] = token;
             }
             return config;
@@ -81,6 +85,7 @@ angular.module('authenticationService', [])
             return $q.reject(response);
         }
 
+        return interceptorFactory;
     });
 
 
