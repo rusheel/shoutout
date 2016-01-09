@@ -11,4 +11,4 @@ Share news, information, advice, jokes, ask and answer questions, offer support,
 AngularJS, Node.js, socket.io, Express, Mongoose (MongoDB), JSONWebToken, bcrypt, bodyparser, morgan, Bootstrap, HTML/CSS
 
 
-[Visit ShoutOut (shoutoutnow.heroku.com)](shoutoutnow.heroku.com)
+[Visit ShoutOut (shoutoutnow.heroku.com)](http://shoutoutnow.heroku.com)
