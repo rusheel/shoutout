@@ -22,11 +22,8 @@ angular.module('userCtrl',['userService'])
     vm.signUpUser = function () {
         console.log('signup process started');
         vm.message = '';
-        console.log(vm.userData);
         User.create(vm.userData)
             .then(function(response) {
-                console.log('response')
-                console.log(response)
                 vm.userData = {};
                 vm.message = response.data.message;
                 $window.localStorage.setItem('token', response.data.token);

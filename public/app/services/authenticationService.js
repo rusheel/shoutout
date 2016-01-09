@@ -9,7 +9,6 @@ angular.module('authenticationService', [])
                 password: password
             })
                 .success(function (data) {
-                    console.log(data);
                     AuthToken.setToken(data.token);
                     console.log('set token');
                     return data;
@@ -54,7 +53,6 @@ angular.module('authenticationService', [])
             $window.localStorage.setItem('token', token);
         }
         else {
-            console.log('here')
             $window.localStorage.removeItem('token');
         }
 
@@ -68,7 +66,6 @@ angular.module('authenticationService', [])
 
         var interceptorFactory = {};
         interceptorFactory.request = function (config) {
-            console.log('goes here')
             var token = AuthToken.getToken();
             if (token) {
                 console.log('exists')

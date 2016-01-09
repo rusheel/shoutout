@@ -19,6 +19,7 @@ angular.module('mainCtrl', [])
 
             vm.error = '';
 
+
             Auth.login(vm.loginData.username, vm.loginData.password)
                 .success(function(data) {
                     vm.processing = false;
@@ -27,15 +28,20 @@ angular.module('mainCtrl', [])
                             vm.user = data;
                             console.log(data);
                         });
-                    console.log('post do login')
                     if (data) {
+                        if(data.message=="User does not exist") {
+                            $location.path('/login');
+                            console.log('User does not exist')
+
+                        }
                         //redirect to homepage
-                        $location.path('/');
+                        else $location.path('/');
                     }
-                    else
+                    else {
                         vm.error = data.message;
+
+                    }
                 })
-                .faiure
         }
 
         vm.doLogout= function () {
