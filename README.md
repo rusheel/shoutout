@@ -2,7 +2,7 @@
 
 ShoutOut is real-time social web app that allows you to connect with everyone.
 
-Get a live feed of what everyone is saying
+Get a live feed of what everyone is saying and speak your mind
 
 Share news, information, advice, jokes, ask and answer questions, offer support, and interact freely.
 
