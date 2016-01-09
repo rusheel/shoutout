@@ -34,12 +34,13 @@ angular.module('mainCtrl', [])
                     }
                     else
                         vm.error = data.message;
-                });
+                })
+                .faiure
         }
 
         vm.doLogout= function () {
             Auth.logout();
             //redirect user to home
-            $location.path('/index.html');
+            $location.path('/logout');
         }
     });

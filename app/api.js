@@ -1,6 +1,6 @@
 var User = require('../user.js');
 
-var Story = require('../story.js');
+var Story = require('../shoutout.js');
 
 var config = require('../config');
 

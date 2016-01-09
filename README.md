@@ -1,6 +1,6 @@
-# ArtfulNarration API
+# ShoutOut
 
-ArtfulNarration is a social reading platform where writers can share their stories, fan-fiction, poems and life experiences. 
+ShoutOut is real-time social app that allows you to connect with everyone.
 
 The ArtfulNarration API allows writers to post their stories to ArtfulNarration and read others stories.
 

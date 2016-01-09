@@ -4,8 +4,8 @@
     </div>
     <div>
         <img class="img-responsive" style="max-width:25%;margin: 0 auto;" src="app/views/images/shoutout.png"/>
-        <p> Get a live feed of what everyone is saying</p>
-        <p> Share news, crack jokes, ask questions, offer support, and interact freely.</p>
+        <p> Get a live feed of what everyone is saying </p>
+        <p> Share news, information, advice, crack jokes, ask and answer questions, offer support, and interact freely.</p>
         <p> Login to discover the ShoutOut world :) </p>
         <a href="/login" class="btn btn-primary"> Login </a>
     </div>
@@ -26,14 +26,14 @@
 
                     <div class = "panel-body">
                         <form ng-submit="story.createStory()">
-                            <input class="form-control input-lg" type="text" ng-model="story.storyData.content" placeholder=".......">
+                            <input class="form-control input-lg" type="text" ng-model="story.storyData.content" placeholder="Enter your ShoutOut here..">
                         </form>
                     </div>
                 </div>
 
                 <div class="panel panel-success">
                     <div class="panel-heading">
-                        ShoutOuts
+                        Live ShoutOut Feed
                     </div>
                     <div class="panel-body" ng-repeat="each in story.stories | reverse">
                         <p style="max-width: 900px;word-wrap: break-word"> {{each.content}} </p>

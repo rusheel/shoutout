@@ -11,6 +11,10 @@ angular.module('appRoutes', ['ngRoute'])
             .when('/signup', {
                 templateUrl: 'app/views/page/signup.html'
             })
+            .when('/logout', {
+                templateUrl: 'app/views/page/home.html'
+            })
+
 
         $locationProvider.html5Mode(true);
     });
